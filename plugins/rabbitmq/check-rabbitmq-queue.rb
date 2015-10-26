@@ -17,11 +17,13 @@ class CheckRabbitMQMessages < Sensu::Plugin::Check::CLI
 
   option :host,
     :description => "RabbitMQ management API host",
+    :short => '-h HOST',
     :long => "--host HOST",
     :default => "localhost"
 
   option :port,
     :description => "RabbitMQ management API port",
+    :short => '-P PORT',
     :long => "--port PORT",
     :proc => proc { |p| p.to_i },
     :default => 15672
@@ -34,16 +36,19 @@ class CheckRabbitMQMessages < Sensu::Plugin::Check::CLI
 
   option :user,
     :description => "RabbitMQ management API user",
+    :short => '-u USER',
     :long => "--user USER",
     :default => "guest"
 
   option :password,
     :description => "RabbitMQ management API password",
+    :short => '-p PASSWORD',
     :long => "--password PASSWORD",
     :default => "guest"
 
   option :queue,
     :description => "RabbitMQ queue to monitor",
+    :short => '-q queue_name',
     :long => "--queue queue_name",
     :required => true
 
